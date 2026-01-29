@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - RealEstate</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Admin Specific Overrides */
+        body {
+            background-color: #f9fafb;
+        }
+
+        .admin-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: white;
+            border-right: 1px solid #e5e7eb;
+            padding: 2rem;
+            position: fixed;
+            height: 100%;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            flex: 1;
+            padding: 2rem;
+        }
+
+        .sidebar h2 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 1rem;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            display: block;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .sidebar a:hover,
+        .sidebar a.active {
+            background: var(--bg-light);
+            color: var(--primary-color);
+        }
+
+        .admin-section {
+            display: none;
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .admin-section.active {
+            display: block;
+        }
+
+        .admin-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .data-table th,
+        .data-table td {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .data-table th {
+            background: #f9fafb;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .data-table img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            max-width: 600px;
+        }
+
+        label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        input[type="file"] {
+            padding: 0.5rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            width: 100%;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            resize: vertical;
+            min-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Admin Panel</h2>
+            <ul>
+                <li><a href="#" class="nav-link active" data-target="project-mgmt">Project Management</a></li>
+                <li><a href="#" class="nav-link" data-target="client-mgmt">Client Management</a></li>
+                <li><a href="#" class="nav-link" data-target="contact-details">Contact Responses</a></li>
+                <li><a href="#" class="nav-link" data-target="subscribers">Subscribers</a></li>
+                <li><a href="/" target="_blank">View Live Site →</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Project Management -->
+            <section id="project-mgmt" class="admin-section active">
+                <div class="admin-header">
+                    <h2>Add New Project</h2>
+                </div>
+                <form id="add-project-form" class="form-grid">
+                    <div class="form-group">
+                        <label>Project Name</label>
+                        <input type="text" id="proj-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Project Description</label>
+                        <textarea id="proj-desc" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Project Image</label>
+                        <input type="file" id="proj-image" accept="image/*" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Project</button>
+                </form>
+
+                <div class="admin-header" style="margin-top: 3rem;">
+                    <h2>Existing Projects</h2>
+                </div>
+                <table class="data-table" id="projects-table">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Client Management -->
+            <section id="client-mgmt" class="admin-section">
+                <div class="admin-header">
+                    <h2>Add New Client</h2>
+                </div>
+                <form id="add-client-form" class="form-grid">
+                    <div class="form-group">
+                        <label>Client Name</label>
+                        <input type="text" id="client-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Designation</label>
+                        <input type="text" id="client-role" placeholder="e.g. CEO, Web Developer" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Client Description/Testimonial</label>
+                        <textarea id="client-desc" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Client Image</label>
+                        <input type="file" id="client-image" accept="image/*" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Client</button>
+                </form>
+
+                <div class="admin-header" style="margin-top: 3rem;">
+                    <h2>Happy Clients</h2>
+                </div>
+                <table class="data-table" id="clients-table">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Contact Details -->
+            <section id="contact-details" class="admin-section">
+                <div class="admin-header">
+                    <h2>Contact Form Responses</h2>
+                </div>
+                <table class="data-table" id="contact-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Mobile</th>
+                            <th>City</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Subscribers -->
+            <section id="subscribers" class="admin-section">
+                <div class="admin-header">
+                    <h2>Subscribed Email Addresses</h2>
+                </div>
+                <table class="data-table" id="subscriber-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Email Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

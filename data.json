@@ -1,0 +1,101 @@
+{
+  "projects": [
+    {
+      "_id": "1",
+      "name": "Sunset Villa",
+      "description": "A luxurious modern villa overlooking the ocean with a private infinity pool.",
+      "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "date": "2026-01-29T14:49:58.369Z"
+    },
+    {
+      "_id": "2",
+      "name": "Urban Heights",
+      "description": "A sophisticated apartment complex in the city center with smart home features.",
+      "image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "date": "2026-01-29T16:00:00.000Z"
+    },
+    {
+      "_id": "3",
+      "name": "Green Valley Eco Homes",
+      "description": "Sustainable living cottages nestled in nature with renewable energy sources.",
+      "image": "https://images.unsplash.com/photo-1449844908441-8829872d2607?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "date": "2026-01-29T16:05:00.000Z"
+    },
+    {
+      "_id": "4",
+      "name": "Skyline Towers",
+      "description": "Premium office spaces with panoramic city views and state-of-the-art facilities.",
+      "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "date": "2026-01-29T16:10:00.000Z"
+    }
+  ],
+  "clients": [
+    {
+      "_id": "1",
+      "name": "Sarah Jenkins",
+      "designation": "CEO, TechFlow",
+      "description": "RealEstate Inc transformed our vision into reality. Their attention to detail is unmatched.",
+      "image": "/images/client-1.png",
+      "date": "2026-01-29T14:49:58.369Z"
+    },
+    {
+      "_id": "2",
+      "name": "Michael Chen",
+      "designation": "Founder, StartUp Hub",
+      "description": "The team was professional and delivered ahead of schedule. Truly impressive work!",
+      "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "date": "2026-01-29T16:15:00.000Z"
+    },
+    {
+      "_id": "3",
+      "name": "Emily Clark",
+      "designation": "Director, Creative Arts",
+      "description": "Absolutely stunning designs that perfectly captured our brand identity.",
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "date": "2026-01-29T16:20:00.000Z"
+    },
+    {
+      "_id": "4",
+      "name": "David Ross",
+      "designation": "Real Estate Investor",
+      "description": "Reliable, efficient, and top-quality work. Highly recommended for any large scale projects.",
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "date": "2026-01-29T16:25:00.000Z"
+    }
+  ],
+  "contacts": [
+    {
+      "_id": "1769699870388",
+      "fullName": "Battu Naga Roopini",
+      "email": "rupini.5111@gmail.com",
+      "mobile": "8985438567",
+      "city": "VIJAYAWADA",
+      "date": "2026-01-29T15:17:50.388Z"
+    },
+    {
+      "_id": "1769703503855",
+      "fullName": "Battu Naga Roopini",
+      "email": "rupini.5111@gmail.com",
+      "mobile": "8985438567",
+      "city": "VIJAYAWADA",
+      "date": "2026-01-29T16:18:23.855Z"
+    }
+  ],
+  "subscribers": [
+    {
+      "_id": "1769699959942",
+      "email": "rupini.5@gmail.com",
+      "date": "2026-01-29T15:19:19.942Z"
+    },
+    {
+      "_id": "1769703488600",
+      "email": "rups@gmail.com",
+      "date": "2026-01-29T16:18:08.600Z"
+    },
+    {
+      "_id": "1769704682258",
+      "email": "rakesh.engineerr@gmail.com",
+      "date": "2026-01-29T16:38:02.258Z"
+    }
+  ]
+}
