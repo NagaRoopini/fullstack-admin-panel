@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupAdminForms();
 });
 
-const API_Base = '/api';
+const API_Base = 'https://fullstack-admin-panel-backend.onrender.com/api';
 
 // --- Tab Navigation ---
 function setupNavigation() {

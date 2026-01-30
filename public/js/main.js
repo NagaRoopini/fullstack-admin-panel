@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupForms();
 });
 
-const API_Base = '/api';
+const API_Base = 'https://fullstack-admin-panel-backend.onrender.com/api';
 
 // --- Toast Notification Logic ---
 function showToast(message, type = 'success') {
