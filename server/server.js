@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use('/uploads', express.static(path.join(__dirname, '../public/uploads')));
 
 // Database Connection
-const MONGO_URI = 'mongodb://localhost:27017/realestate_db';
+const MONGO_URI = process.env.MONGO_URI;
 const dbFallback = require('./utils/dbFallback');
 
 // Database State
