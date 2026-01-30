@@ -138,7 +138,13 @@ router.post('/newsletter', async (req, res) => {
         }
     } else {
         const existing = dbFallback.find('subscribers', { email });
-        if (existing.length > 0) return res.status(409).json({ message: "Email already subscribed" });
+        if (existing.length > 0) {
+            return res.status(200).json({
+                success: true,
+                message: "Email already subscribed"
+            });
+            }
+
 
         const newSubscriber = dbFallback.add('subscribers', { email });
         res.status(201).json(newSubscriber);
